@@ -58,3 +58,7 @@ To install and run the project locally, follow these steps:
     num = "0.4"
 
 
+3. Build and run the project:
+
+    cargo build
+    cargo run
