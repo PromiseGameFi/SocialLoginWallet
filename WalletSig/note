@@ -11,3 +11,39 @@ Assumptions:
 We'll use the secp256k1 library for EVM private key and signature generation.
 threshold_crypto crate for secret sharing (Shamir’s Secret Sharing).
 Support for EVM tokens, meaning storing balances for ERC-20 tokens and signing transactions.
+
+Key Points of the Program:
+
+MPC Security: The private key is split into shares using Shamir’s Secret Sharing. At least threshold shares are needed to sign transactions.
+
+ERC-20 Support: The wallet can store and manage balances of ERC-20 tokens, as shown in store_tokens and get_token_balance.
+
+Signing Transactions: Only when the required number of shares is collected, the wallet can reconstruct the private key and sign a message using EVM-compatible cryptography.
+
+Simple Token Transfer: In a simplified manner, the wallet supports transferring tokens by managing balances internally.
+
+Improvements for Real-World Use:
+
+Web3 Integration: Use the web3 crate to interact with Ethereum and handle real token transfers, smart contract calls, etc.
+
+Secure Storage of Shares: Store shares in a distributed, secure way using MPC protocols for distributed signing (like using secure enclaves or nodes).
+
+Multi-Chain Support: Add support for more EVM-based blockchains or other token standards.
+
+This solution offers a robust framework for an Ethereum wallet that leverages MPC to decentralize private key management, making it much harder to compromise.
+
+Explanation of Dependencies:
+
+secp256k1: For handling private key operations used in EVM-compatible wallets.
+
+threshold_crypto: Provides Shamir’s Secret Sharing functionality for splitting and reconstructing private keys.
+
+ethereum-types: Provides basic Ethereum types like H160 (Ethereum address) and U256 (large unsigned integer).
+
+ethabi: For encoding and decoding ABI (Ethereum smart contract) data.
+
+web3: For interacting with Ethereum blockchain (sending transactions, reading smart contract state).
+
+tokio: For async runtime support, as web3 uses async functions.
+
+rand: For generating random numbers during secret key share generation.
