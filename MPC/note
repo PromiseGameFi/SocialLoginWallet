@@ -19,3 +19,12 @@ The private key is split into multiple shares.
 No single party holds the full private key.
 Only a subset (threshold) of shares is required to perform operations such as signing transactions.
 This approach decentralizes key management, reducing the risk of theft or compromise.
+
+Security Considerations
+Decentralized Key Management: No single party holds the full private key, reducing the risk of theft.
+Threshold Cryptography: Only a specific number of shares are required to reconstruct the key, making it resilient to compromise.
+Memory Safety: Rust ensures that memory is handled securely, reducing vulnerabilities like buffer overflows or use-after-free errors.
+Potential Extensions
+Implement more advanced MPC protocols.
+Integrate this system with real-world blockchain applications for secure transaction signing.
+Add support for more flexible cryptographic operations.

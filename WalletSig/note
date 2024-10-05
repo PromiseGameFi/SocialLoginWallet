@@ -1,0 +1,13 @@
+Multi-Party Computation (MPC) and Shamir's Secret Sharing for secure private key management.
+
+In this solution:
+
+We'll split the wallet's private key into multiple shares using Shamir's Secret Sharing.
+MPC will ensure the secure management of shares and reconstruction only when a threshold is met.
+The wallet will support basic operations like storing EVM tokens, signing transactions, and reconstructing the private key securely.
+
+Assumptions:
+
+We'll use the secp256k1 library for EVM private key and signature generation.
+threshold_crypto crate for secret sharing (Shamir’s Secret Sharing).
+Support for EVM tokens, meaning storing balances for ERC-20 tokens and signing transactions.
