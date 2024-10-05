@@ -62,3 +62,14 @@ To install and run the project locally, follow these steps:
 
     cargo build
     cargo run
+
+
+## Usage
+The program generates a private key, splits it into multiple shares, and then reconstructs the secret from a subset of those shares. To see the output:
+        
+        cargo run
+
+## Author
+Promise Emmanuel Oluwadare
+
+This project showcases a foundational MPC protocol in Rust. It's designed to illustrate how secure and decentralized key management can be achieved through cryptographic protocols.
