@@ -48,3 +48,13 @@ To install and run the project locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/mpc-key-management.git
    cd mpc-key-management
+
+2. Add the necessary dependencies by modifying your Cargo.toml
+
+    [dependencies]
+    secrecy = "0.8"
+    rand = "0.8"
+    num-bigint = "0.4"
+    num = "0.4"
+
+
