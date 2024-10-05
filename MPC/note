@@ -1,3 +1,6 @@
+Multi-Party Computation (MPC) with Shamir's Secret Sharing in Rust
+This project implements Multi-Party Computation (MPC) using Shamir's Secret Sharing scheme in Rust. The primary use case demonstrated is Private Key Management, where a private key is split into multiple shares, ensuring that no single party holds the entire key. A subset of these shares (the threshold) is required to reconstruct the key.
+
 Overview
 What is MPC?
 Multi-Party Computation (MPC) is a cryptographic protocol that allows multiple participants to collaboratively compute a function while keeping their individual inputs private. In the context of private key management, MPC enables decentralized key management, preventing any single entity from holding the complete key, thus reducing the risk of compromise.
