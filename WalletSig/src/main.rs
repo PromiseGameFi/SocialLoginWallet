@@ -1,16 +1,8 @@
-// Add dependencies to your Cargo.toml
-// [dependencies]
-// secp256k1 = "0.21"
-// threshold_crypto = "0.4"
-// rand = "0.8"
-
 use secp256k1::{Message, Secp256k1, SecretKey};
 use secp256k1::ecdsa::Signature;
 use threshold_crypto::{SecretKeySet, SecretKeyShare, PublicKeySet};
 use std::collections::HashMap;
-use rand::rngs::ThreadRng;
-use rand::thread_rng; // For creating a thread-local random number generator
-use rand::Rng; // Import Rng trait for random number generation
+use rand::rngs::OsRng;
 
 // Represents a simplified ERC-20 token balance system
 #[derive(Debug)]
@@ -59,10 +51,7 @@ struct MPCWallet {
 
 impl MPCWallet {
     fn new(threshold: usize, total_shares: usize) -> Self {
-        // Create a random number generator
-        let mut rng: ThreadRng = thread_rng();
-
-        // Generate a random secret key set with a given threshold
+        let mut rng = OsRng;
         let sk_set = SecretKeySet::random(threshold, &mut rng);
         let pub_key_set = sk_set.public_keys();
 
@@ -82,25 +71,23 @@ impl MPCWallet {
     }
 
     fn sign_transaction(&self, message: &[u8], shares: Vec<usize>) -> Option<Signature> {
-        // Ensure we have enough shares to meet the threshold
         if shares.len() < self.threshold {
             println!("Not enough shares to reconstruct the private key.");
             return None;
         }
 
-        // Combine secret key shares
-        let mut secret_sum = SecretKey::from_slice(&[0; 32]).expect("Failed to create a zeroed secret key"); // Create a new zeroed secret key
-        for &i in &shares {
+        let mut combined_share = self.secret_key_shares[&shares[0]].clone();
+        for &i in &shares[1..] {
             if let Some(secret_share) = self.secret_key_shares.get(&i) {
-                secret_sum = secret_sum.add(secret_share.secret()); // Correct way to add shares
+                combined_share = combined_share.combine_with(secret_share);
             }
         }
+        let secret_sum = combined_share.to_privkey();
 
-        // Reconstruct the private key and sign the message using secp256k1
-        let secp_private_key_bytes = secret_sum.to_bytes(); // Get bytes from SecretKey
+        let secp_private_key_bytes = secret_sum.serialize_secret();
         let secp_private_key = SecretKey::from_slice(&secp_private_key_bytes).expect("Invalid private key");
 
-        let msg = Message::from_slice(message).expect("Invalid message slice");
+        let msg = Message::from_digest_slice(message).expect("Invalid message slice");
         let signature = self.secp.sign_ecdsa(&msg, &secp_private_key);
         Some(signature)
     }
