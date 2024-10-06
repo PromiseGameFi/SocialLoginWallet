@@ -8,7 +8,8 @@ use secp256k1::{Message, Secp256k1, SecretKey};
 use secp256k1::ecdsa::Signature;
 use threshold_crypto::{SecretKeySet, SecretKeyShare, PublicKeySet};
 use std::collections::HashMap;
-use rand::thread_rng;
+use rand::rngs::ThreadRng;
+use rand::thread_rng; // For creating a thread-local random number generator
 use rand::Rng; // Import Rng trait for random number generation
 
 // Represents a simplified ERC-20 token balance system
@@ -59,7 +60,7 @@ struct MPCWallet {
 impl MPCWallet {
     fn new(threshold: usize, total_shares: usize) -> Self {
         // Create a random number generator
-        let mut rng = thread_rng();
+        let mut rng: ThreadRng = thread_rng();
 
         // Generate a random secret key set with a given threshold
         let sk_set = SecretKeySet::random(threshold, &mut rng);
@@ -88,15 +89,15 @@ impl MPCWallet {
         }
 
         // Combine secret key shares
-        let mut secret_sum = threshold_crypto::SecretKey::random(); // Create a new secret key
+        let mut secret_sum = SecretKey::from_slice(&[0; 32]).expect("Failed to create a zeroed secret key"); // Create a new zeroed secret key
         for &i in &shares {
             if let Some(secret_share) = self.secret_key_shares.get(&i) {
-                secret_sum = secret_sum + secret_share.secret(); // Access secret representation correctly
+                secret_sum = secret_sum.add(secret_share.secret()); // Correct way to add shares
             }
         }
 
         // Reconstruct the private key and sign the message using secp256k1
-        let secp_private_key_bytes: [u8; 32] = secret_sum.to_bytes().expect("Secret key conversion failed").try_into().expect("Secret key conversion failed");
+        let secp_private_key_bytes = secret_sum.to_bytes(); // Get bytes from SecretKey
         let secp_private_key = SecretKey::from_slice(&secp_private_key_bytes).expect("Invalid private key");
 
         let msg = Message::from_slice(message).expect("Invalid message slice");
