@@ -10,3 +10,22 @@ To run the compiled binary, use the following command:
 cargo run
 
 # 2. Running with Arguments (if needed)
+
+cargo run -- <your arguments here>
+
+# 3. Building for Release
+
+# If you're ready to deploy your application or want to test its performance, you can build it in release mode, which optimizes the compiled binary:
+
+cargo build --release
+
+# After building in release mode, run it like this:
+
+./target/release/mpc_wallet
+
+##(Note that you need to replace mpc_wallet with the actual name of your binary if it's different.)
+
+## 4. Checking the Output
+#### Once you run your application, check the console output for results. In the case of the MPC wallet code provided, it will print out balances, transfer results, and any signatures created during the execution.
+
+cargo run
