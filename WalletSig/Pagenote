@@ -1,0 +1,12 @@
+# MPC Wallet Project
+
+## Running the MPC Wallet Project
+
+### 1. Running the Project
+
+To run the compiled binary, use the following command:
+
+```bash
+cargo run
+
+# 2. Running with Arguments (if needed)
