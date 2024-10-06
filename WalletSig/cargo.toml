@@ -1,11 +1,11 @@
 [package]
 name = "mpc_wallet"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
 secp256k1 = "0.21"                # EVM crypto support (secp256k1)
-threshold_crypto = "0.5"           # Shamir's Secret Sharing (MPC support)
+threshold_crypto = "0.4"           # Shamir's Secret Sharing (MPC support)
 ethereum-types = "0.11"            # Ethereum types (H160, U256, etc.)
 ethabi = "14.0"                    # ABI encoding/decoding for smart contract calls
 web3 = { version = "0.15", features = ["tokio-runtime"] }   # Web3 integration
