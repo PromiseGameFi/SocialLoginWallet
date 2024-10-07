@@ -47,3 +47,5 @@ web3: For interacting with Ethereum blockchain (sending transactions, reading sm
 tokio: For async runtime support, as web3 uses async functions.
 
 rand: For generating random numbers during secret key share generation.
+
+Ethereum's implementation of the Elliptic Curve Digital Signature Algorithm (ECDSA) uses the secp256k1 elliptic curve and the SHA-256 cryptographic hash function. The cryptographic hash function used in Ethereum's ECDSA is SHA-256 (Secure Hash Algorithm 256-bit).
