@@ -1,0 +1,21 @@
+Original seed phrase:
+"permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
+
+Reconstructed seed phrase from combination 1:
+  Share 1: "recall cheese taxi zone feel saddle grid one purity list runway depart tooth magnet cricket banner place orange easy crunch wood peace indicate depend"
+  Share 2: "logic job brief voice ice happy hip robust keep click capable seed keen top tackle quarter radio crash tool various license forum machine sphere"
+  Reconstructed seed phrase:
+    "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
+
+Reconstructed seed phrase from combination 2:
+  Share 1: "recall cheese taxi zone feel saddle grid one purity list runway depart tooth magnet cricket banner place orange easy crunch wood peace indicate depend"
+  Share 3: "need real grant very coast fortune doll desk cruise relief heart laptop rate dignity finish road else very effort essence foil anchor alter absent"
+  Reconstructed seed phrase:
+    "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
+
+Reconstructed seed phrase from combination 3:
+  Share 2: "logic job brief voice ice happy hip robust keep click capable seed keen top tackle quarter radio crash tool various license forum machine sphere"
+  Share 3: "need real grant very coast fortune doll desk cruise relief heart laptop rate dignity finish road else very effort essence foil anchor alter absent"
+  Reconstructed seed phrase:
+    "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
+
