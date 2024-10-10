@@ -2,20 +2,20 @@ Original seed phrase:
 "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
 
 Reconstructed seed phrase from combination 1:
-  Share 1: "proud know donate soon donkey meat awesome buffalo wreck lonely faint speed powder swim maple furnace vibrant immense spread life curve balance cabbage camera"
-  Share 2: "saddle candy grace purpose fossil among wait best suit cinnamon sauce blanket casual film regular danger bronze attract simple occur stock room climb shine"
+  Share 1: "gate patient slam huge scissors change agree company meadow letter vivid rookie base manual canoe hawk minimum stereo knee all recipe digital vast satoshi"
+  Share 2: "decline lake image use merit garden talent expose damage shuffle rally seed echo tiger witness swift theory evoke panda nest assist toilet mansion judge"
   Reconstructed seed phrase:
     "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
 
 Reconstructed seed phrase from combination 2:
-  Share 1: "proud know donate soon donkey meat awesome buffalo wreck lonely faint speed powder swim maple furnace vibrant immense spread life curve balance cabbage camera"
-  Share 3: "rate resist lounge offer base addict profit base series rescue board drop place sport mechanic humble real catch worry museum shiver flame seven bird"
+  Share 1: "gate patient slam huge scissors change agree company meadow letter vivid rookie base manual canoe hawk minimum stereo knee all recipe digital vast satoshi"
+  Share 3: "wine corn bounce junk dress warm next goddess frown foil razor winter joke define gold remind corn school add bracket object club manage cruise"
   Reconstructed seed phrase:
     "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
 
 Reconstructed seed phrase from combination 3:
-  Share 2: "saddle candy grace purpose fossil among wait best suit cinnamon sauce blanket casual film regular danger bronze attract simple occur stock room climb shine"
-  Share 3: "rate resist lounge offer base addict profit base series rescue board drop place sport mechanic humble real catch worry museum shiver flame seven bird"
+  Share 2: "decline lake image use merit garden talent expose damage shuffle rally seed echo tiger witness swift theory evoke panda nest assist toilet mansion judge"
+  Share 3: "wine corn bounce junk dress warm next goddess frown foil razor winter joke define gold remind corn school add bracket object club manage cruise"
   Reconstructed seed phrase:
     "permit universe parent weapon amused modify essay borrow tobacco budget walnut lunch consider gallery ride amazing frog forget treat market chapter velvet useless topple"
 
