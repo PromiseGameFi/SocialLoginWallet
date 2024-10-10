@@ -1,7 +1,6 @@
 [package]
 name = "shamir-bip39"
 version = "0.1.0"
-authors = ["alberto@sonnino.com"]
 edition = "2021"
 rust-version = "1.69.0"
 description = "A command line tool to generate Shamir Secret Sharing shares from a BIP39 mnemonic"
