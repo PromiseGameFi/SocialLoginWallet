@@ -1,4 +1,4 @@
 HD Wallet.
-Markle Tree.
+Markle Tree and Markle Root.
 ECC and ECDH
 ECDSA.
