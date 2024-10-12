@@ -114,6 +114,7 @@ impl MPCWallet {
 fn main() {
     // Create an MPC wallet with a threshold of 3 and 5 shares in total
     let mut mpc_wallet = MPCWallet::new(3, 5);
+    
 
     // Store some ERC-20 tokens
     mpc_wallet.store_tokens("ETH".to_string(), 1000);
