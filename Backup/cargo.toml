@@ -3,6 +3,7 @@ name = "mpc_wallet"
 version = "0.1.0"
 edition = "2021"
 
+
 [dependencies]
 secp256k1 = "0.29.1"                # EVM crypto support (secp256k1)
 threshold_crypto = "0.4"           # Shamir's Secret Sharing (MPC support)
