@@ -6,6 +6,9 @@ ECC (Elliptic Curve Cryptography) and ECDH (Elliptic Curve Diffie-Hellman) are c
 
 ECC is a type of public-key cryptography based on the algebraic structure of elliptic curves over finite fields. It offers a higher level of security with smaller key sizes compared to other algorithms like RSA, making it efficient and lightweight. 
 
+
+RSA is a type of asymmetric encryption, which uses two different but linked keys. In RSA cryptography, both the public and the private keys can encrypt a message. The opposite key from the one used to encrypt a message is used to decrypt it.
+
 ### Benefits of ECC:
 - **Smaller Key Size**: ECC can provide the same level of security as RSA with a much smaller key size (e.g., a 256-bit ECC key is considered as secure as a 3072-bit RSA key).
 - **Performance Efficiency**: Due to the smaller key size, ECC requires less computational power and memory, making it ideal for devices with limited resources.

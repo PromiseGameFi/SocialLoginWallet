@@ -16,9 +16,13 @@ These BIPs are related to wallet functionalities, including address formats and 
 
 - **BIP-49**: Derivation Scheme for P2WPKH-nested-in-P2SH based Accounts  
   Defines the derivation paths for SegWit addresses (nested in P2SH), extending BIP-44 for backward-compatible SegWit addresses.
+  
+  SegWit is the most common BTC address format that almost all businesses and wallets support. It starts with the number 3 and contains 26 to 36 characters. 
+  One starts with '3' (P2SH format), which is more common, and the other starts with 'bc1' (bech32 format).
 
 - **BIP-84**: Derivation Scheme for P2WPKH based Accounts  
   Defines the derivation paths for native SegWit addresses (Bech32 format), which are more efficient and cheaper.
+
 
 - **BIP-173**: Base32 Address Format for SegWit Addresses (Bech32)  
   Specifies the Bech32 address format used for native SegWit addresses, improving efficiency and error detection.
