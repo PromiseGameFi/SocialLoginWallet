@@ -13,6 +13,7 @@ A Merkle tree is a binary tree where each leaf node represents a hash of a data 
 
 ## What is the Merkle Root?
 
+
 The Merkle root is the single hash at the top of the Merkle tree. It represents the aggregate of all the hashes beneath it, summarizing the entire dataset. If any part of the data changes (even by a single bit), the hash values down the tree will change, and ultimately the Merkle root will change, allowing for quick and efficient verification of data integrity.
 
 ## Uses of the Merkle Root:
