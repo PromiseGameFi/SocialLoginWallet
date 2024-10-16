@@ -1,5 +1,5 @@
-// Copyright (c) Alberto Sonnino
-// SPDX-License-Identifier: Apache-2.0
+//  Copyright (c) Alberto Sonnino
+//  SPDX-License-Identifier: Apache-2.0
 
 use gf256::gf256;
 use rand::{CryptoRng, Rng, RngCore};
