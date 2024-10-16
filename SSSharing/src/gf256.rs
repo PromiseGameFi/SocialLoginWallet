@@ -52,7 +52,7 @@ impl ShamirSecretSharing for gf256 {
 }
 
 /// NOTE: No chaos test is implemented for the group GF(256) because the field is too small
-/// to prevent collisions.
+/// to prevent collisions. 
 #[cfg(test)]
 mod test {
     use gf256::gf256;
