@@ -68,7 +68,7 @@ impl Bip39Dictionary {
     }
 }
 
-/// The entropy of a bip-39 secret.
+///  The entropy of a bip-39 secret.
 #[derive(PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug, Clone))]
 struct Entropy([bool; ENTROPY_BITS]);
