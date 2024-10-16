@@ -21,6 +21,7 @@ Wallets use various technologies to generate secure and unique seed phrases, whi
 ### 3. Hashing Algorithms
 - After the seed is generated, wallets often use hashing algorithms (e.g., **SHA-256**) to derive private keys from the seed phrase, ensuring the security and integrity of the keys.
 
+
 ### 4. Key Derivation Functions
 - Standards like **BIP32** or **BIP44** are employed for hierarchical deterministic wallets, allowing users to derive multiple addresses from a single seed phrase.
 
