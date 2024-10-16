@@ -153,7 +153,7 @@ impl Checksum {
 pub struct Bip39Secret {
     /// The entropy of the secret.
     entropy: Entropy,
-    /// The checksum of the secret.
+    ///  The checksum of the secret.
     checksum: Checksum,
 }
 
