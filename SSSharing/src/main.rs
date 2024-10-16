@@ -177,6 +177,7 @@ fn pretty_print_mnemonic(heading: &str, mnemonic: &str) {
 
 /// Double-check that the secret can be reconstructed from any `t` shares.
 /// Panic if the secret cannot be reconstructed.
+/// Secret reconstruction failed at "t sec" for each cases 
 #[cfg(feature = "double-check")]
 fn double_check_shares(
     secret: &Bip39Secret,
