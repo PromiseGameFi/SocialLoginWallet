@@ -6,6 +6,7 @@ Account abstraction is a proposed upgrade to blockchain account systems, particu
 
 ### Key Concepts:
 
+
 1. **Unified Account Model**: Merges externally owned accounts (EOAs) and contract accounts into a single type.
 
 2. **Programmable Transaction Logic**: Allows custom rules for transaction validation and execution.
