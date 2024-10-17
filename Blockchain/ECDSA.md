@@ -11,7 +11,7 @@ ECDSA (Elliptic Curve Digital Signature Algorithm) is a digital signature algori
 ### Signing Process:
 1. To sign a message, the signer uses their private key and applies the ECDSA algorithm, producing a signature.
 2. The signature includes two values (r and s) derived from the message hash and the signer's private key.
-
+ 
 ### Verification Process:
 1. To verify the signature, the verifier uses the signer’s public key and the signature (r and s values).
 2. If the verification succeeds, it confirms that the message was indeed signed by the holder of the private key associated with the given public key and that the message has not been altered.
