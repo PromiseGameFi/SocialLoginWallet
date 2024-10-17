@@ -3,14 +3,4 @@
 To create an ECC curve, we'll use parametric equations. In the left panel, click on the "+" button to add a new item.
 Select "Parametric Curve" from the dropdown menu.
 You'll see three input fields for x(t), y(t), and z(t). For an ECC curve, we'll use something like this:
-x(t) = t
-y(t) = sqrt(t^3 + a*t + b)
-z(t) = t^2
-Where 'a' and 'b' are parameters of the elliptic curve.
-Enter these equations into the respective fields. For example, you might use:
-x(t) = t 
-y(t) = sqrt(t^3 - 3*t + 2)
-z(t) = t^2
-Adjust the domain of t if needed. By default, it might be set to [0, 2π]. You can change this in the "Range" field below the equations.
 
-To add more curves or points, you can click the "+" button again and repeat the process with different equations or parameters.
