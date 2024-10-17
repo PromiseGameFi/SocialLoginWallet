@@ -49,7 +49,7 @@ Secret sharing techniques, particularly threshold cryptography, can enhance the 
 4. **Scalability**: Ensuring that secret sharing operations don't impact blockchain performance.
 
 ## Future Directions
-
+ 
 1. **Standardization efforts**: Working towards common protocols for account abstraction and secret sharing.
 2. **Integration with DeFi**: Applying these concepts to decentralized finance applications.
 3. **Cross-chain compatibility**: Developing solutions that work across different blockchain networks.
