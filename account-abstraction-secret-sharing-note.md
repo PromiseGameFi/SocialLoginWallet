@@ -4,6 +4,7 @@
 
 Account abstraction is a proposed upgrade to blockchain account systems, particularly in Ethereum, that aims to make blockchain interactions more flexible and user-friendly.
 
+
 ### Key Concepts:
 
 
