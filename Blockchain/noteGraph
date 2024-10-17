@@ -8,7 +8,7 @@ y(t) = sqrt(t^3 + a*t + b)
 z(t) = t^2
 Where 'a' and 'b' are parameters of the elliptic curve.
 Enter these equations into the respective fields. For example, you might use:
-x(t) = t
+x(t) = t 
 y(t) = sqrt(t^3 - 3*t + 2)
 z(t) = t^2
 Adjust the domain of t if needed. By default, it might be set to [0, 2π]. You can change this in the "Range" field below the equations.
