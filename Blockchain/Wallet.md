@@ -14,10 +14,10 @@ Wallets use various technologies to generate secure and unique seed phrases, whi
   - Keyboard input
   - Hardware-based random number generators
  
- 
+
 ### 2. Mnemonic Code Generation
 - The seed phrase is generated using the **BIP39** standard, which creates a human-readable mnemonic phrase from the random seed. This typically consists of:
-  - 12 or 24 words.
+  - 12 or 24 words. 
 
 ### 3. Hashing Algorithms
 - After the seed is generated, wallets often use hashing algorithms (e.g., **SHA-256**) to derive private keys from the seed phrase, ensuring the security and integrity of the keys.
