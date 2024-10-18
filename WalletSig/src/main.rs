@@ -13,6 +13,7 @@ fn main() {
 
     // Split the secret into shares
     let shares = sss.split(secret.clone());
+    
 
     println!("shares: {:?}", shares);
 
