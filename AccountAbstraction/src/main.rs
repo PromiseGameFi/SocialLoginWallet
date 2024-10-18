@@ -26,7 +26,7 @@ impl AbstractAccount {
         }
     }
 
-    
+
 
     fn verify_transaction(&self, transaction: &Transaction, signatures: &[SignatureShare]) -> bool {
         if signatures.len() < self.threshold {
@@ -43,7 +43,7 @@ impl AbstractAccount {
 
     fn hash_transaction(&self, transaction: &Transaction) -> H256 {
         let mut hasher = Keccak256::new();
-        hasher.update(transaction.to.as_bytes());
+        
         hasher.update(&transaction.value.to_be_bytes_vec());
         hasher.update(&transaction.nonce.to_be_bytes_vec());
         hasher.update(&transaction.data);
