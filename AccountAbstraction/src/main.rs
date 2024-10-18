@@ -26,6 +26,7 @@ impl AbstractAccount {
         }
     }
 
+    
     fn verify_transaction(&self, transaction: &Transaction, signatures: &[SignatureShare]) -> bool {
         if signatures.len() < self.threshold {
             return false;
