@@ -1,0 +1,12 @@
+graph TD
+    A[Seed Phrase] -->|PBKDF2| B[Binary Seed]
+    B -->|HMAC-SHA512| C[Master Private Key]
+    C -->|Derivation Path| D[Child Private Key 1]
+    C -->|Derivation Path| E[Child Private Key 2]
+    C -->|Derivation Path| F[Child Private Key n]
+    D -->|Elliptic Curve| G[Public Key 1]
+    E -->|Elliptic Curve| H[Public Key 2]
+    F -->|Elliptic Curve| I[Public Key n]
+    G -->|Hash Function| J[Address 1]
+    H -->|Hash Function| K[Address 2]
+    I -->|Hash Function| L[Address n]
