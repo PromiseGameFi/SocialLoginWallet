@@ -93,7 +93,9 @@ fn main() -> Result<()> {
 
     match args.operation {
         Operation::Split { secret, n, t } => {
-          
+            ensure!(n > 0, "There must be at least one share");
+            ensure!(t > 0, "The threshold  must be at least one");
+            ensure!(t <= n, "The threshold must be lower than the total shares");
 
             // Generate a bip-39 secret from the input mnemonic.
             let secret = Bip39Secret::from_mnemonic(&secret, &dictionary)?;
