@@ -31,6 +31,12 @@ impl AbstractAccount {
     
 }
 
+struct Transaction {
+    to: Address,
+    value: U256,
+    nonce: U256,
+    data: Vec<u8>,
+}
 
 fn main() {
     // Create an abstract account with a 2-of-3 threshold
