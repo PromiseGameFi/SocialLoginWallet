@@ -121,7 +121,10 @@ fn main() -> Result<()> {
                 .map(|share| Bip39Share::from_mnemonic(share.index, &share.secret, &dictionary))
                 .collect::<Result<Vec<_>>>()?;
 
-           
+            // Ensure each share is valid with respect to the bip-39 standard.
+            for share in &shares {
+                share.is_valid()?;
+            }
 
             // Reconstruct the master secret from the shares.
             let secret = Bip39Secret::reconstruct(&shares);
