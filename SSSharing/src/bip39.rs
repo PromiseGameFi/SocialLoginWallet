@@ -1,4 +1,4 @@
-// Copyright (c) Alberto Sonnino
+
 // SPDX-License-Identifier: Apache-2.0
 
 use std::{array::TryFromSliceError, fmt::Debug, fs::read_to_string, path::Path};

@@ -1,4 +1,4 @@
-// Copyright (c) Alberto Sonnino
+
 // SPDX-License-Identifier: Apache-2.0
 
 /// Convert an iterator of bytes into a vector of bits.

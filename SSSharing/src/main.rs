@@ -1,4 +1,3 @@
-// Copyright (c) Alberto Sonnino
 // SPDX-License-Identifier: Apache-2.0
 
 mod bip39;
