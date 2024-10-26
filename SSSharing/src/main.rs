@@ -22,49 +22,7 @@ use crate::{
     shamir::ShamirSecretSharing,
 };
 
-#[derive(Parser)]
-#[command(author, version, about, long_about = None)]
-struct Args {
-    #[clap(
-        long,
-        value_name = "FILE",
-        default_value = "assets/bip39-en.txt",
-        global = true
-    )]
-    dictionary_path: String,
 
-    #[clap(subcommand)]
-    operation: Operation,
-}
-
-#[derive(Parser)]
-enum Operation {
-    /// Split a bip-39 secret into shares.
-    Split {
-        /// The bip-39 secret to split.
-        #[clap(short, long, value_name = "STR")]
-        secret: String,
-        /// The number of shares to generate.
-        #[clap(short, long, value_name = "INT")]
-        n: u8,
-        /// The threshold number of shares required to reconstruct the secret.
-        #[clap(short, long, value_name = "INT")]
-        t: u8,
-    },
-    /// Reconstruct a bip-39 secret from shares.
-    Reconstruct {
-        /// Shares are provided in the following format:
-        /// "INDEX_I WORD_1 .. WORD_2,INDEX_K WORD_1 .. WORD_2, ..."
-        #[clap(short, long, value_name = "[STR]", value_delimiter = ',', num_args(1..))]
-        shares: Vec<ShareString>,
-    },
-    /// Ensure a string is a valid bip-39 mnemonic.
-    Check {
-        /// The bip-39 mnemonic to check.
-        #[clap(short, long, value_name = "STR")]
-        mnemonic: String,
-    },
-}
 
 #[derive(Clone)]
 struct ShareString {
