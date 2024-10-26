@@ -66,6 +66,7 @@ enum Operation {
     },
 }
 
+
 #[derive(Clone)]
 struct ShareString {
     index: u8,
