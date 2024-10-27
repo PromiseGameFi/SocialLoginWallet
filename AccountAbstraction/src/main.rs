@@ -45,8 +45,9 @@ impl AbstractAccount {
         let mut hasher = Keccak256::new();
         
         hasher.update(&transaction.value.to_be_bytes_vec());
-        
+
         hasher.update(&transaction.nonce.to_be_bytes_vec());
+        
         hasher.update(&transaction.data);
         H256::from_slice(&hasher.finalize())
     }
