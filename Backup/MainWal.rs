@@ -24,7 +24,7 @@ impl TokenWallet {
     fn store_tokens(&mut self, token_symbol: String, amount: u64) {
         let balance = self.balances.entry(token_symbol.clone()).or_insert(0);
         *balance += amount;
-        println!("Stored {} of {}", amount, token_symbol);
+        println!("Stor {} of {}", amount, token_symbol);
     }
 
     fn get_token_balance(&self, token_symbol: &str) -> u64 {
