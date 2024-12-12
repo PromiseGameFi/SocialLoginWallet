@@ -43,7 +43,7 @@ These BIPs focus on transaction structures, signing processes, and the Bitcoin s
   SegWit separates the digital signature (witness) from the transaction data, solving the transaction malleability issue and allowing for larger block sizes.
 
 - **BIP-143**: Transaction Signature Verification for Version 0 Witness Program  
-  Defines a new method for signing SegWit transactions, improving efficiency and reducing malleability.
+  Defines a new method for signing SegWit transactions, improving efficiency and reducing malleability. 
 
 - **BIP-147**: Dealing with Dummy Stack Element Malleability  
   Specifies rules for SegWit to prevent certain types of malleability attacks related to dummy stack elements.
