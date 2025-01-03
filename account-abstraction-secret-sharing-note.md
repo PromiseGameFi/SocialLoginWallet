@@ -32,7 +32,7 @@ Secret sharing techniques, particularly threshold cryptography, can enhance the 
 
 ### Benefits:
 
-- **Enhanced Security**: Reduces single points of failure in key management and acesss.
+- **Enhanced Security**: Reduces single points of failure in key management.
 - **Flexibility**: Allows for complex account control and recovery mechanisms.
 - **Privacy**: Can be used to implement confidential transactions or private smart contracts.
 
