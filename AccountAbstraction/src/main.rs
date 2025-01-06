@@ -1,5 +1,31 @@
 
+use threshold_crypto::{PublicKeySet, SecretKeySet, SecretKeyShare, SignatureShare};
+use ethereum_types::{Address, U256, H256};
+use sha3::{Digest, Keccak256};
+use rand::Rng;
 
+struct AbstractAccount {
+    address: Address,
+    public_key_set: PublicKeySet,
+    threshold: usize,
+}
+
+impl AbstractAccount {
+    fn new(threshold: usize, total_shares: usize) -> Self {
+        let mut rng = rand::thread_rng();
+        let secret_key_set = SecretKeySet::random(threshold - 1, &mut rng);
+        let public_key_set = secret_key_set.public_keys();
+        
+        // Derive Ethereum address from the group's public key
+        let public_key_bytes = public_key_set.public_key().to_bytes();
+        let address = Address::from_slice(&Keccak256::digest(&public_key_bytes)[12..]);
+        
+        AbstractAccount {
+            address,
+            public_key_set,
+            threshold,
+        }
+    }
 
 
     fn verify_transaction(&self, transaction: &Transaction, signatures: &[SignatureShare]) -> bool {
