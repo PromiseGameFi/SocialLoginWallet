@@ -2,7 +2,7 @@
 use threshold_crypto::{PublicKeySet, SecretKeySet, SecretKeyShare, SignatureShare};
 use ethereum_types::{Address, U256, H256};
 use sha3::{Digest, Keccak256};
-
+use rand::Rng;
 
 struct AbstractAccount {
     address: Address,
