@@ -3,11 +3,7 @@ use ethereum_types::{Address, U256, H256};
 use sha3::{Digest, Keccak256};
 use rand::Rng;
 
-struct AbstractAccount {
-    address: Address,
-    public_key_set: PublicKeySet,
-    threshold: usize,
-}
+
 
 impl AbstractAccount {
     fn new(threshold: usize, total_shares: usize) -> Self {
