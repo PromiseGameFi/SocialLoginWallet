@@ -108,7 +108,14 @@ where
     }
 }
 
-
+impl<T> From<&Entropy> for FieldArray<T, ENTROPY_BYTES>
+where
+    T: From<u8> + Debug,
+{
+    fn from(value: &Entropy) -> Self {
+        value.to_bytes().map(T::from).into()
+    }
+}
 
 /// The checksum of a bip-39 secret.
 #[derive(PartialEq, Eq)]
