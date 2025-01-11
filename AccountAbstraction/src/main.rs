@@ -33,12 +33,7 @@ impl AbstractAccount {
             return false;
         }
 
-        let message = self.hash_transaction(transaction);
-        let combined_signature = self.public_key_set
-            .combine_signatures(signatures)
-            .expect("Failed to combine signatures");
-
-        self.public_key_set.public_key().verify(&combined_signature, message)
+        
     }
 
     fn hash_transaction(&self, transaction: &Transaction) -> H256 {
