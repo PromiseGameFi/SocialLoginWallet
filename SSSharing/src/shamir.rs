@@ -27,33 +27,7 @@ pub struct ShamirShare<T> {
     secret: T,
 }
 
-impl<T> ShamirShare<T> {
-    /// Create a new share with the given ID and secret.
-    pub fn new(id: u8, secret: T) -> Self {
-        Self { id, secret }
-    }
 
-    /// Get the share's ID.
-    #[cfg(test)]
-    pub fn id(&self) -> &u8 {
-        &self.id
-    }
-
-    /// Get the share's secret.
-    pub fn secret(&self) -> &T {
-        &self.secret
-    }
-
-    /// Convert the share into a tuple of ID and secret.
-    pub fn into_inner(self) -> (u8, T) {
-        (self.id, self.secret)
-    }
-
-    /// Get the share's ID and secret.
-    pub fn as_coordinates(&self) -> (&u8, &T) {
-        (&self.id, &self.secret)
-    }
-}
 
 impl<T> AsRef<ShamirShare<T>> for ShamirShare<T> {
     fn as_ref(&self) -> &ShamirShare<T> {
