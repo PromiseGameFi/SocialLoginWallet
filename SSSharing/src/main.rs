@@ -148,7 +148,31 @@ fn main() -> Result<()> {
 
 /// Pretty-print a bip-39 mnemonic.
 fn pretty_print_mnemonic(heading: &str, mnemonic: &str) {
-    
+    let words = mnemonic
+        .split_whitespace()
+        .enumerate()
+        .map(|(j, word)| format!("{:2} {}", (j + 1).to_string().bold(), word))
+        .collect::<Vec<_>>();
+
+    let chunks = words
+        .chunks(4)
+        .map(|chunk| Cell::new(&chunk.join("\n")))
+        .collect::<Vec<_>>();
+
+    let mut table = Table::new();
+    let format = FormatBuilder::new()
+        .separators(
+            &[LinePosition::Top, LinePosition::Bottom, LinePosition::Title],
+            LineSeparator::new('-', '-', '-', '-'),
+        )
+        .padding(1, 1)
+        .build();
+    table.set_format(format);
+    table.add_row(Row::new(chunks));
+
+    println!("\n{}", heading.bold().green());
+    table.printstd();
+    println!();
 }
 
 /// Double-check that the secret can be reconstructed from any `t` shares.
