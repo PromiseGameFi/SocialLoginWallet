@@ -71,5 +71,18 @@ fn main() {
         data: vec![],
     };
 
-   
+    // In a real scenario, these would be distributed to different parties
+    let mut rng = rand::thread_rng();
+    let secret_key_set = SecretKeySet::random(1, &mut rng);
+    let shares: Vec<SecretKeyShare> = (0..3).map(|i| secret_key_set.secret_key_share(i)).collect();
+
+    // Sign the transaction with 2 out of 3 shares
+    let message = account.hash_transaction(&transaction);
+    let signatures: Vec<_> = shares.iter().take(2)
+        .map(|share| share.sign(message))
+        .collect();
+
+    // Verify the transaction
+    let is_valid = account.verify_transaction(&transaction, &signatures);
+    println!("Transaction is valid: {}", is_valid);
 }
