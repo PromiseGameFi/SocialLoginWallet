@@ -110,7 +110,29 @@ impl<T, const N: usize> ShamirSecretSharing for FieldArray<T, N>
 where
     T: ShamirSecretSharing + Clone + Debug,
 {
-    
+    fn split<R: CryptoRng + RngCore>(&self, n: u8, t: u8, rng: &mut R) -> Vec<ShamirShare<Self>> {
+        let mut secrets = HashMap::new();
+
+        for element in &self.0 {
+            for share in element.split(n, t, rng) {
+                let (id, secret) = share.into_inner();
+                secrets.entry(id).or_insert_with(Vec::new).push(secret);
+            }
+        }
+
+        let mut shares = secrets
+            .into_iter()
+            .map(|(id, share)| {
+                let share = share
+                    .try_into()
+                    .expect("Shamir secret sharing should preserve length");
+                ShamirShare::new(id, Self(share))
+            })
+            .collect::<Vec<_>>();
+
+        shares.sort_by(|a, b| a.id.cmp(&b.id));
+        shares
+    }
 
     fn reconstruct<S: AsRef<ShamirShare<Self>>>(shares: &[S]) -> Self {
         Self(array::from_fn(|i| {
