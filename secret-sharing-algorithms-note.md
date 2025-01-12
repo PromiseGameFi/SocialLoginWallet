@@ -30,6 +30,30 @@
    - Allows share verification
    - Uses homomorphic encryption
 
+8. **Pedersen's VSS**
+   - Information-theoretic security
+   - Uses two polynomials and discrete logarithms
+
+9. **Proactive Secret Sharing**
+   - Periodic share renewal
+   - Protects against gradual corruption
+
+10. **Quantum Secret Sharing**
+    - Uses quantum states
+    - Theoretical with growing practical implementations
+
+11. **Visual Cryptography**
+    - Shares are random-looking images
+    - Physical overlay for reconstruction
+
+## Selection Criteria
+
+- Security level required
+- Computational resources
+- Storage constraints
+- Verifiability needs
+- Partial reconstruction tolerance
+- Specific threat models
 
 ## Note
 Shamir's remains popular, but alternatives offer specific benefits for certain use cases.
