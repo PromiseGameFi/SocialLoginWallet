@@ -14,6 +14,21 @@
    - Based on Chinese Remainder Theorem
    - Efficient for certain applications
 
+4. **Additive Secret Sharing**
+   - Shares sum up to the secret
+   - Fast but requires all shares
+
+5. **XOR Secret Sharing**
+   - Uses XOR operation
+   - All shares needed for reconstruction
+
+6. **Krawczyk's Secret Sharing Made Short**
+   - Combines encryption with secret sharing
+   - Reduces share size for large secrets
+
+7. **Feldman's Verifiable Secret Sharing (VSS)**
+   - Allows share verification
+   - Uses homomorphic encryption
 
 8. **Pedersen's VSS**
    - Information-theoretic security
