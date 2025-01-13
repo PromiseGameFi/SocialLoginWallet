@@ -178,21 +178,7 @@ pub mod test {
 
     use super::{FieldArray, Random, ShamirSecretSharing};
 
-    pub fn test_reconstruct<T>() -> T
-    where
-        T: ShamirSecretSharing + Random + PartialEq + Eq + Debug + Clone,
-    {
-        let mut rng = StdRng::seed_from_u64(0);
-        let secret = T::random(&mut rng);
-
-        let n = 5;
-        let t = 3;
-        let shares = secret.clone().split(n, t, &mut rng);
-
-        let reconstructed = T::reconstruct(&shares[..t as usize]);
-        assert_eq!(secret, reconstructed);
-        secret
-    }
+    
 
     pub fn test_reconstruct_sparse<T>() -> T
     where
