@@ -163,7 +163,12 @@ impl<T, const N: usize> From<[T; N]> for FieldArray<T, N> {
     }
 }
 
-
+#[cfg(test)]
+impl<T: Random, const N: usize> Random for FieldArray<T, N> {
+    fn random<R: CryptoRng + RngCore>(rng: &mut R) -> Self {
+        Self(array::from_fn(|_| T::random(rng)))
+    }
+}
 
 #[cfg(test)]
 pub mod test {
