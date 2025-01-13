@@ -42,7 +42,18 @@
     - Uses quantum states
     - Theoretical with growing practical implementations
 
+11. **Visual Cryptography**
+    - Shares are random-looking images
+    - Physical overlay for reconstruction
 
+## Selection Criteria
+
+- Security level required
+- Computational resources
+- Storage constraints
+- Verifiability needs
+- Partial reconstruction tolerance
+- Specific threat models
 
 ## Note
 Shamir's remains popular, but alternatives offer specific benefits for certain use cases.
