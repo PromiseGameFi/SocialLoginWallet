@@ -157,11 +157,7 @@ impl<T, const N: usize> IntoIterator for FieldArray<T, N> {
     }
 }
 
-impl<T, const N: usize> From<[T; N]> for FieldArray<T, N> {
-    fn from(value: [T; N]) -> Self {
-        Self(value)
-    }
-}
+
 
 #[cfg(test)]
 impl<T: Random, const N: usize> Random for FieldArray<T, N> {
