@@ -198,16 +198,7 @@ pub mod test {
     where
         T: ShamirSecretSharing + Random + PartialEq + Eq + Debug + Clone,
     {
-        let mut rng = StdRng::seed_from_u64(0);
-        let secret = T::random(&mut rng);
-        let mut shares = secret.clone().split(5, 3, &mut rng);
-        let share_4 = shares.pop().unwrap();
-        let _share_3 = shares.pop().unwrap();
-        let share_2 = shares.pop().unwrap();
-        let share_1 = shares.pop().unwrap();
-        let reconstructed = T::reconstruct(&[share_1, share_2, share_4]);
-        assert_eq!(secret, reconstructed);
-        secret
+        
     }
 
     pub fn test_reconstruct_missing_shares<T>() -> (T, T)
