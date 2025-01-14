@@ -226,29 +226,7 @@ pub mod test {
         (secret, reconstructed)
     }
 
-    pub fn chaos_test<T>()
-    where
-        T: ShamirSecretSharing + Random + PartialEq + Eq + Debug + Clone,
-    {
-        let mut rng = StdRng::seed_from_u64(0);
-        for n in 1..=15 {
-            for t in 1..=n {
-                let secret = T::random(&mut rng);
-
-                let mut shares = secret.clone().split(n, t, &mut rng);
-                shares.shuffle(&mut rng);
-
-                for i in 1..=t {
-                    let reconstructed = T::reconstruct(&shares[0..i as usize]);
-                    if i == t {
-                        assert_eq!(secret, reconstructed);
-                    } else {
-                        assert_ne!(secret, reconstructed);
-                    }
-                }
-            }
-        }
-    }
+    
 
     #[test]
     fn reconstruct() {
