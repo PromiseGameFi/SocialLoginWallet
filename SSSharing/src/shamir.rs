@@ -259,5 +259,30 @@ pub mod test {
         test_reconstruct::<FieldArray<gf256::gf256, 32>>();
     }
 
-  
+    #[test]
+    fn reconstruct_sparse() {
+        test_reconstruct_sparse::<FieldArray<gf256::gf256, 16>>();
+        test_reconstruct_sparse::<FieldArray<gf256::gf256, 20>>();
+        test_reconstruct_sparse::<FieldArray<gf256::gf256, 28>>();
+        test_reconstruct_sparse::<FieldArray<gf256::gf256, 24>>();
+        test_reconstruct_sparse::<FieldArray<gf256::gf256, 32>>();
+    }
+
+    #[test]
+    fn reconstruct_missing_shares() {
+        test_reconstruct_missing_shares::<FieldArray<gf256::gf256, 16>>();
+        test_reconstruct_missing_shares::<FieldArray<gf256::gf256, 20>>();
+        test_reconstruct_missing_shares::<FieldArray<gf256::gf256, 24>>();
+        test_reconstruct_missing_shares::<FieldArray<gf256::gf256, 28>>();
+        test_reconstruct_missing_shares::<FieldArray<gf256::gf256, 32>>();
+    }
+
+    #[test]
+    fn chaos() {
+        chaos_test::<FieldArray<gf256::gf256, 16>>();
+        chaos_test::<FieldArray<gf256::gf256, 20>>();
+        chaos_test::<FieldArray<gf256::gf256, 24>>();
+        chaos_test::<FieldArray<gf256::gf256, 28>>();
+        chaos_test::<FieldArray<gf256::gf256, 32>>();
+    }
 }
