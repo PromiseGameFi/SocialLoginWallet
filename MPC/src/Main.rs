@@ -27,19 +27,3 @@ const CHECKSUM_BITS: usize = (MNEMONIC_WORDS * DICTIONARY_INDICES_BITS) / 33;
 const ENTROPY_BITS: usize = CHECKSUM_BITS * 32;
 const ENTROPY_BYTES: usize = ENTROPY_BITS / 8;
 
-use std::str::FromStr;
-
-use clap::{command, Parser};
-use color_eyre::owo_colors::OwoColorize;
-use eyre::{ensure, Result};
-use prettytable::{
-    format::{FormatBuilder, LinePosition, LineSeparator},
-    Cell,
-    Row,
-    Table,
-};
-
-use crate::{
-    bip39::{Bip39Dictionary, Bip39Secret, Bip39Share},
-    shamir::ShamirSecretSharing,
-};
