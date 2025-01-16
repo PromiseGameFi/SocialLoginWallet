@@ -27,3 +27,23 @@ const CHECKSUM_BITS: usize = (MNEMONIC_WORDS * DICTIONARY_INDICES_BITS) / 33;
 const ENTROPY_BITS: usize = CHECKSUM_BITS * 32;
 const ENTROPY_BYTES: usize = ENTROPY_BITS / 8;
 
+pub struct Bip39Dictionary {
+    words: [String; DICTIONARY_WORDS],
+}
+
+impl Bip39Dictionary {
+    /// Load the bip-39 dictionary from a file.
+    pub fn load<P: AsRef<Path>>(dictionary_path: P) -> Result<Self> {
+        let words = read_to_string(dictionary_path)?
+            .lines()
+            .map(Into::into)
+            .collect::<Vec<_>>();
+        let length = words.len();
+
+        Ok(Self {
+            words: words.try_into().map_err(|_| {
+                eyre!("Invalid BIP-39 dictionary length {length} != {DICTIONARY_WORDS}")
+            })?,
+        })
+    }
+} 
