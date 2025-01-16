@@ -47,21 +47,20 @@ impl Bip39Dictionary {
         })
     }
 
-    fn reconstruct<S: AsRef<ShamirShare<Self>>>(shares: &[S]) -> Self {
-        let mut y = gf256(0);
-        for (i, share) in shares.iter().enumerate() {
-            let mut li = gf256(1);
-            let (x0, y0) = share.as_ref().as_coordinates();
-            for (j, share) in shares.iter().enumerate() {
-                let (x1, _y1) = share.as_ref().as_coordinates();
-                if i != j {
-                    li *= gf256(*x1) / (gf256(*x0) + gf256(*x1));
-                }
-            }
-            y += li * y0;
-        }
-        y
-    }
-
-
 } 
+
+fn reconstruct<S: AsRef<ShamirShare<Self>>>(shares: &[S]) -> Self {
+    let mut y = gf256(0);
+    for (i, share) in shares.iter().enumerate() {
+        let mut li = gf256(1);
+        let (x0, y0) = share.as_ref().as_coordinates();
+        for (j, share) in shares.iter().enumerate() {
+            let (x1, _y1) = share.as_ref().as_coordinates();
+            if i != j {
+                li *= gf256(*x1) / (gf256(*x0) + gf256(*x1));
+            }
+        }
+        y += li * y0;
+    }
+    y
+}
