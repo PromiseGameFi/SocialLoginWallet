@@ -32,20 +32,6 @@ pub struct Bip39Dictionary {
 }
 
 impl Bip39Dictionary {
-    /// Load the bip-39 dictionary from a file.
-    pub fn load<P: AsRef<Path>>(dictionary_path: P) -> Result<Self> {
-        let words = read_to_string(dictionary_path)?
-            .lines()
-            .map(Into::into)
-            .collect::<Vec<_>>();
-        let length = words.len();
-
-        Ok(Self {
-            words: words.try_into().map_err(|_| {
-                eyre!("Invalid BIP-39 dictionary length {length} != {DICTIONARY_WORDS}")
-            })?,
-        })
-    }
-
+    /
 } 
 
