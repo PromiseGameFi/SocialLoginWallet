@@ -32,6 +32,6 @@ pub struct Bip39Dictionary {
 }
 
 impl Bip39Dictionary {
-    /
+
 } 
 
