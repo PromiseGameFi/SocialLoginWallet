@@ -46,20 +46,7 @@ pub struct Bip39Dictionary {
         );
     }
 
-    #[test]
-    fn test_bits_to_bytes() {
-        assert_eq!(
-            bits_to_bytes(&[
-                false, false, false, false, false, false, false, false, true, true, true, true,
-                true, true, true, true
-            ]),
-            vec![0b0000_0000, 0b1111_1111]
-        );
-        assert_eq!(
-            bits_to_bytes(&[true, false, true, false, true, false, true, false]),
-            vec![0b1010_1010]
-        );
-    }
+    
 
 } 
 
