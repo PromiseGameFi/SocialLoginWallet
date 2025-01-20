@@ -44,5 +44,18 @@ pub struct Bip39Dictionary {
     words: [String; DICTIONARY_WORDS],
 }
 
+fn reconstruct<S: AsRef<ShamirShare<Self>>>(shares: &[S]) -> Self {
+    Self(array::from_fn(|i| {
+        let element_shares = shares
+            .iter()
+            .map(|share| {
+                let (id, secret) = share.as_ref().as_coordinates();
+                ShamirShare::new(*id, secret.0[i].clone())
+            })
+            .collect::<Vec<_>>();
+        T::reconstruct(&element_shares)
+    }))
+}
+
 
 
