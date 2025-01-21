@@ -69,15 +69,7 @@ impl TryFrom<&[bool]> for Entropy {
     }
 }
 
-impl<T> From<FieldArray<T, ENTROPY_BYTES>> for Entropy
-where
-    u8: From<T>,
-{
-    fn from(value: FieldArray<T, ENTROPY_BYTES>) -> Self {
-        let bytes = value.into_iter().map(u8::from).collect::<Vec<_>>();
-        bytes_to_bits(&bytes).as_slice().try_into().unwrap()
-    }
-}
+
 
 impl<T> From<&Entropy> for FieldArray<T, ENTROPY_BYTES>
 where
@@ -89,7 +81,18 @@ where
     }
 }
 
+/// The checksum of a bip-39 secret.
+#[derive(PartialEq, Eq)]
+#[cfg_attr(test, derive(Clone, Debug))]
+struct Checksum([bool; CHECKSUM_BITS]);
 
+impl TryFrom<&[bool]> for Checksum {
+    type Error = TryFromSliceError;
+
+    fn try_from(value: &[bool]) -> Result<Self, Self::Error> {
+        Ok(Self(value.try_into()?))
+    }
+}
 
 impl From<&Entropy> for Checksum {
     fn from(entropy: &Entropy) -> Self {
