@@ -89,21 +89,17 @@ where
     }
 }
 
-/// The checksum of a bip-39 secret.
-#[derive(PartialEq, Eq)]
-#[cfg_attr(test, derive(Clone, Debug))]
-struct Checksum([bool; CHECKSUM_BITS]);
 
-impl TryFrom<&[bool]> for Checksum {
-    type Error = TryFromSliceError;
-
-    fn try_from(value: &[bool]) -> Result<Self, Self::Error> {
-        Ok(Self(value.try_into()?))
-    }
-}
 
 impl From<&Entropy> for Checksum {
-    
+    fn from(entropy: &Entropy) -> Self {
+        let digest = Sha256::digest(entropy.to_bytes());
+        let bits = bytes_to_bits(digest.as_ref());
+        let checksum = bits[..CHECKSUM_BITS]
+            .try_into()
+            .expect("Slice size should match the checksum bit length");
+        Self(checksum)
+    }
 }
 
 
