@@ -85,6 +85,7 @@ where
 {
     fn from(value: &Entropy) -> Self {
         value.to_bytes().map(T::from).into()
+        value.to_be_bytes().map
     }
 }
 
