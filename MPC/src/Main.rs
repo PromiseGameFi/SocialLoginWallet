@@ -44,9 +44,7 @@ pub struct Bip39Dictionary {
     words: [String; DICTIONARY_WORDS],
 }
 
-fn reconstruct<S: AsRef<ShamirShare<Self>>>(shares: &[S]) -> Self {
-   
-}
+
 
 
 
