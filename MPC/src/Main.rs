@@ -45,24 +45,15 @@ pub struct Bip39Dictionary {
 }
 
 impl Entropy {
-    pub fn as_bits(&self) -> &[bool] {
-        &self.0
-    }
-
-    pub fn to_bytes(&self) -> [u8; ENTROPY_BYTES] {
-        bits_to_bytes(&self.0).try_into().unwrap()
-    }
-
-    #[cfg(test)]
-    pub fn random<R: CryptoRng + RngCore>(rng: &mut R) -> Self {
-        use rand::Rng;
-
-        Self(std::array::from_fn(|_| rng.gen()))
-    }
+    
 }
 
 impl TryFrom<&[bool]> for Entropy {
-    
+    type Error = TryFromSliceError;
+
+    fn try_from(value: &[bool]) -> Result<Self, Self::Error> {
+        Ok(Self(value.try_into()?))
+    }
 }
 
 impl<T> From<FieldArray<T, ENTROPY_BYTES>> for Entropy
