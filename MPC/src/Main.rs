@@ -14,23 +14,7 @@ use fastcrypto::hash::{HashFunction, Sha256};
 use gf256::gf256;
 use rand::{CryptoRng, RngCore};
 
-use crate::{
-    shamir::{FieldArray, ShamirSecretSharing, ShamirShare},
-    utils::{bits_to_bytes, bytes_to_bits},
-};
 
-/// Get the index of a word in the dictionary (as bits).
-pub fn bits_from_word(&self, word: &str) -> Result<[bool; DICTIONARY_INDICES_BITS]> {
-    let index = self
-        .words
-        .iter()
-        .position(|w| w == word)
-        .ok_or(eyre!("Invalid BIP-39 word '{word}' in mnemonic"))?;
-    let bits = bytes_to_bits(&index.to_be_bytes());
-    Ok(bits[bits.len() - DICTIONARY_INDICES_BITS..]
-        .try_into()
-        .expect("Slice size should match the dictionary index bit length"))
-}
 
 /// Parameters of the bip-39 specification (24 words variant).
 const DICTIONARY_INDICES_BITS: usize = 11;
