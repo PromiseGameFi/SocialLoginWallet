@@ -62,18 +62,17 @@ impl Entropy {
 }
 
 impl TryFrom<&[bool]> for Entropy {
-    type Error = TryFromSliceError;
-
-    fn try_from(value: &[bool]) -> Result<Self, Self::Error> {
-        Ok(Self(value.try_into()?))
-    }
+    
 }
 
 impl<T> From<FieldArray<T, ENTROPY_BYTES>> for Entropy
 where
     u8: From<T>,
 {
-    
+    fn from(value: FieldArray<T, ENTROPY_BYTES>) -> Self {
+        let bytes = value.into_iter().map(u8::from).collect::<Vec<_>>();
+        bytes_to_bits(&bytes).as_slice().try_into().unwrap()
+    }
 }
 
 impl<T> From<&Entropy> for FieldArray<T, ENTROPY_BYTES>
