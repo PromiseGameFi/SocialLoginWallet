@@ -11,9 +11,7 @@ mod utils;
 const DICTIONARY_INDICES_BITS: usize = 11;
 const MNEMONIC_WORDS: usize = 24;
 const DICTIONARY_WORDS: usize = 2 << (DICTIONARY_INDICES_BITS - 1);
-const CHECKSUM_BITS: usize = (MNEMONIC_WORDS * DICTIONARY_INDICES_BITS) / 33;
-const ENTROPY_BITS: usize = CHECKSUM_BITS * 32;
-const ENTROPY_BYTES: usize = ENTROPY_BITS / 8;
+
 
 pub struct Bip39Dictionary {
     words: [String; DICTIONARY_WORDS],
