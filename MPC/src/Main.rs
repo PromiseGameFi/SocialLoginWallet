@@ -37,7 +37,11 @@ impl Entropy {
 }
 
 impl TryFrom<&[bool]> for Entropy {
-    
+    type Error = TryFromSliceError;
+
+    fn try_from(value: &[bool]) -> Result<Self, Self::Error> {
+        Ok(Self(value.try_into()?))
+    }
 }
 
 impl<T> From<FieldArray<T, ENTROPY_BYTES>> for Entropy
