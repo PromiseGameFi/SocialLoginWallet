@@ -73,7 +73,12 @@ impl TryFrom<&[bool]> for Checksum {
 
 impl From<&Entropy> for Checksum {
     fn from(entropy: &Entropy) -> Self {
-       
+        let digest = Sha256::digest(entropy.to_bytes());
+        let bits = bytes_to_bits(digest.as_ref());
+        let checksum = bits[..CHECKSUM_BITS]
+            .try_into()
+            .expect("Slice size should match the checksum bit length");
+        Self(checksum)
     }
 }
 
