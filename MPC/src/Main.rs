@@ -48,20 +48,14 @@ impl<T> From<FieldArray<T, ENTROPY_BYTES>> for Entropy
 where
     u8: From<T>,
 {
-    fn from(value: FieldArray<T, ENTROPY_BYTES>) -> Self {
-        let bytes = value.into_iter().map(u8::from).collect::<Vec<_>>();
-        bytes_to_bits(&bytes).as_slice().try_into().unwrap()
-    }
+   
 }
 
 impl<T> From<&Entropy> for FieldArray<T, ENTROPY_BYTES>
 where
     T: From<u8> + Debug,
 {
-    fn from(value: &Entropy) -> Self {
-        value.to_bytes().map(T::from).into()
-        value.to_be_bytes().map
-    }
+    
 }
 
 /// The checksum of a bip-39 secret.
