@@ -1,7 +1,7 @@
 Access the app:
 
 ```
-cd solana-demo
+cd solanasl
 ```
 
 ### Install dependencies
