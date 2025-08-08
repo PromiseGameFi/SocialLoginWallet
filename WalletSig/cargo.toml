@@ -3,6 +3,7 @@ name = "MPC_Wallet"
 version = "0.1.0"
 edition = "2021"  # Adjust based on your Rust version
 
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
