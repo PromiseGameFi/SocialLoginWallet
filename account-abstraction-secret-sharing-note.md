@@ -22,6 +22,7 @@ Secret sharing techniques, particularly threshold cryptography, can enhance the 
 
 ### Applications:
  
+ 
 1. **Multisig Wallets**: Use threshold signatures to require multiple parties to approve transactions.
 
 2. **Social Recovery**: Implement a system where a set number of trusted contacts can help recover account access.
