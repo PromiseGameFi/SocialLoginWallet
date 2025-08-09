@@ -14,6 +14,7 @@ Support for EVM tokens, meaning storing balances for ERC-20 tokens and signing t
 
 Key Points of the Program:
 
+
 MPC Security: The private key is split into shares using Shamir’s Secret Sharing. At least threshold shares are needed to sign transactions.
 
 ERC-20 Support: The wallet can store and manage balances of ERC-20 tokens, as shown in store_tokens and get_token_balance.
