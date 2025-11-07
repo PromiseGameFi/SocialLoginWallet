@@ -40,6 +40,8 @@ cd MPC
 cargo run
 ```
 
+Passkey Auth : https://github.com/PromiseGameFi/Passkey_WalletAuth
+
 ## Security Notice
 
 This project is for research and educational purposes. The implementations are not audited and should not be used in production environments without thorough review.
